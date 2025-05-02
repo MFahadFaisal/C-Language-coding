@@ -13,3 +13,146 @@ int main() {
 }
 
 
+#include <stdio.h>
+
+int main() {
+    2. // Write the program that displays the sum of the squares of two numbers entered by the user.
+    int a,b,sum_of_squares;
+    printf("Enter first number:");
+    scanf("%d",&a);
+    printf("Enter second number:");
+    scanf("%d",&b);
+    sum_of_squares=(a*a)+(b*b);
+    printf("The sum of square of two numbers is %d.",sum_of_squares);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    3. // Write the program that finds the sum of the cubes of the numbers from 1 to 100.
+    int num,sum=0;
+    for(num=1;num<=101;num++)
+    sum=sum+(num*num*num);
+    printf("The sum of cubes of numbers from 1 to 100 is %d.",sum);
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+    //4.Write down the program that calculates the age of the person whose date of birth is entered.
+    int birth_year,present_year,age;
+    printf("Please enter present year:");
+    scanf("%d",&present_year);
+    printf("Please enter your birth year:");
+    scanf("%d",&birth_year);
+    age=present_year-birth_year;
+    printf("Your age is %d.",age);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    //5.Write down the program that finds the factorial of the entered number.
+    int i,number,factorial=1;
+    printf("Enter the number:");
+    scanf("%d",&number);
+    for(i=number;i>1;i--)
+    factorial=factorial*i;
+    printf("The factorial of entered number is %d.",factorial);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    //6.Write down the program that finds multiplication using addition.
+    int num1,num2,counter=0;
+    printf("Enter the first number:");
+    scanf("%d",&num1);
+    printf("Enter the second number:");
+    scanf("%d",&num2);
+    while (num2>0)
+    {
+        counter=counter+num1;
+        num2--;
+    }
+    printf("%d",counter);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    //7.Write down the program that performs division using subtraction.
+    int divisor,dividend,counter=0;
+    printf("Enter the dividend:");
+    scanf("%d",&dividend);
+    printf("Enter the divisor:");
+    scanf("%d",&divisor);
+    for(counter=1;dividend>divisor;counter++)
+    dividend=dividend-divisor;
+    printf("The result of divison is %d.",counter);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    //8.Write the program according to the mode process of the entered number according to the desired number.
+    int num1,num2;
+    printf("Enter the first number:");
+    scanf("%d",&num1);
+    printf("Enter the second number:");
+    scanf("%d",&num2);
+    while(num1>=num2)
+    {
+        num1=num1-num2;
+    }
+    printf("%d",num1);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    //9.Write the program that tells you how many digits the entered number has.
+    float num;
+    int i=1;
+    printf("Enter the number:");
+    scanf("%f",&num);
+    do
+    {
+    num=num/10;
+    i++;
+    }while(num>=9);
+    printf("The number has %d digits.",i);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    //10.Write the program that finds whether the sum of the cubes of the digits of a 3-digit number entered is equal to the number itself.
+   int x,num,sum=0,digit;
+   printf("Enter the number:");
+   scanf("%d",&num);
+   dnz:
+   digit=num%10;
+   sum=sum+digit^3;
+   if(num<10)
+   {
+       sum=sum+num^3;
+       goto dnz;
+   }
+   if(sum==num)
+   
+       printf("Equal");
+    else
+       printf("Not Equal");
+  
+    return 0;
+}
