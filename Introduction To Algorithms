@@ -210,3 +210,86 @@ int main()
     printf("negative:%d\n even:%d\n The number equal to 7 is %d.",negative,even,equal);
     return 0;
 }
+
+#include <stdio.h>
+
+int main()
+{
+    //14.Write the program of the Multiplication Table.
+    int i,j;
+    for(i=1;i<=10;i++)
+    {
+        printf("\n");
+        for(j=1;j<=10;j++)
+        {
+            printf("%d * %d = %d\n",i,j,i*j);
+        }
+    }
+    
+    return 0;
+}
+
+#include <stdio.h>
+
+int main()
+{
+    //15.Write the program that finds whether the entered number is a power of 5.
+    int number;
+    printf("Enter the number:");
+    scanf("%d",&number);
+    dnz:
+    if(number%5==0)
+    {
+        number=number/5;
+        goto dnz;
+    }
+    if(number==1)
+    printf("The number is power of 5.");
+    else
+    printf("The number is not power of 5.");
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    //16.If the sum of the factors of the number x is equal to the number y and the sum of the factors number y is equal to the number x, then these numbers are friendly numbers.Write down the program that finds whether the two entered numbers are friendly or not.
+    
+    int x, y, x_factor = 0, y_factor = 0, i;
+    printf("Enter the two numbers: ");
+    scanf("%d %d", &x, &y);  
+    
+    for(i = 1; i <= x / 2; i++) {
+        if(x % i == 0)
+            x_factor += i;
+    }
+
+    for(i = 1; i <= y / 2; i++) {
+        if(y % i == 0)
+            y_factor += i;
+    }
+
+    if(x_factor == y && y_factor == x)
+        printf("%d and %d are friendly numbers.\n", x, y);
+    else
+        printf("%d and %d are not friendly numbers.\n", x, y);
+
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    //17.Writer the program that prints the first 10 terms of the Fibonacci series.
+    int num1=1,num2=1,num3,count;
+    printf("%d\n",num1);
+    printf("%d\n",num2);
+    for (count=2;count<=11;count++)
+    {
+        num3=num1+num2;
+        printf("%d\n",num3);
+        num1=num2;
+        num2=num3;
+    }
+
+    return 0;
