@@ -156,3 +156,36 @@ int main() {
   
     return 0;
 }
+
+#include <stdio.h>
+
+int main() {
+    //11. Write the program that finds the ratio of the sum of even numbers to the sum of odd numbers among 20 numbers entered from the keyboard.
+    int even=0,odd=0,num,i;
+    float ratio;
+    for(i=1;i<=20;i++)
+    {
+    scanf("%d",&num);
+    if(num%2==0)
+    even=even+num;
+    else
+    odd=odd+num;
+    }
+    ratio=even/odd;
+    printf("The ratio between even and odd numbers is %f",ratio);
+    return 0;
+}
+
+#include <stdio.h>
+#include <math.h>
+
+
+int main() {
+    //12.Write down the program that prints perfect square numbers between 10 and 1000.
+    int count;
+    for (count=4;count*count<=1000;count++)
+    {
+        printf("%lf\n",pow(count,2));
+    }
+    return 0;
+}
