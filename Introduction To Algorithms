@@ -189,3 +189,24 @@ int main() {
     }
     return 0;
 }
+
+#include <stdio.h>
+
+int main()
+{
+    //13.Write the program that finds the sum of negative numbers, the product of even numbers, and the number of numbers equal to 7 among 25 numbers entered from the keyboard and prints them on the screen.
+    int i,num,even=1,equal=0,negative=0;
+    for(i=1;i<=25;i++)
+    {
+        printf("Write the 25 numbers:");
+        scanf("%d",&num);
+        if(num<0)
+        negative=negative+num;
+        if(num%2==0)
+        even=even*num;
+        if(num==7)
+        equal++;
+    }
+    printf("negative:%d\n even:%d\n The number equal to 7 is %d.",negative,even,equal);
+    return 0;
+}
