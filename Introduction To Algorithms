@@ -280,7 +280,7 @@ int main() {
 #include <stdio.h>
 
 int main() {
-    //17.Writer the program that prints the first 10 terms of the Fibonacci series.
+    //17.Write the program that prints the first 10 terms of the Fibonacci series.
     int num1=1,num2=1,num3,count;
     printf("%d\n",num1);
     printf("%d\n",num2);
@@ -293,3 +293,23 @@ int main() {
     }
 
     return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    //18.Write the program that finds whether a number entered from the keyboard is negative, positive or 0.
+    int number;
+    printf("Enter the number:");
+    scanf("%d",&number);
+    if(number>0)
+    printf("The entered number is positive.");
+    else
+    {
+    if (number<0)
+    printf("The entered number is negative.");
+    else
+    printf("The entered number is equal to 0.");
+    }
+    return 0;
+}
