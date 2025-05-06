@@ -562,3 +562,17 @@ int main() {
    printf("The area of circle is %f.\nThe circumference of circle is %f.",area,circumference);
     return 0;
 }
+
+#include <stdio.h>
+#include <math.h>
+int main() {
+    //31.Write he program that finds whether a quadrilateral with sides A, B, C, D is a square.
+  int a,b,c,d;
+  printf("Enter the sides of quadrilateral:");
+  scanf("%d %d %d %d",&a,&b,&c,&d);
+  if(a==b && b==c && c==d)
+   printf("It is Square.%f.");
+   else
+   printf("It is not Square.");
+    return 0;
+}
