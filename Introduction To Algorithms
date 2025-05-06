@@ -466,5 +466,85 @@ int main() {
     return 0;
 }
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
-   
+int main() {
+     //26.Write the program that converts an entered decimal number into a binary number.
+    int num,i=0,sum=0;
+    printf("Enter a number:");
+    scanf("%d",&num);
+    while(num>=2)
+    {
+        sum=sum+(num%2)*pow(10,i);
+        num=num/2;
+    }
+    sum=sum+num*pow(10,i);
+    printf("Binary Values:%d",sum);
+
+    return 0;
+}
+
+   #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+     //27.Write the program that converts the number entered as binary to a decimal number.
+    int num,count=0,sum=0,digit;
+    printf("Enter a number:");
+    scanf("%d",&num);
+    while(num>9)
+    {
+        digit=num%10;
+        num=num/10;
+        sum=sum+digit*pow(2,count);
+        count++;
+    }
+    sum=sum+num*pow(2,count);
+    printf("Decimal Values:%d",sum);
+
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+     //28.Write the program that finds whether the given year is a leap year.
+    int year;
+    printf("Enter an year:");
+    scanf("%d",&year);
+    if(year%4==0)
+    {
+       printf("The entered year is leap year.");
+    }
+    else
+    printf("The entered year is not leap year.");
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    //29.Write the program that shows whether a person whose height and weight are entered is fat, thin or at ideal weight.
+  int weight,height;
+  printf("Enter your weight:");
+  scanf("%d",&weight);
+   printf("Enter your height:");
+  scanf("%d",&height);
+  height=height%100;
+  if(height-weight>=11)
+  {
+      printf("You Entered weight is thin.");
+  }
+    else if (height-weight==11)
+    {
+    printf("Your weight is ideal.Congrats!!!");    
+    }
+    else
+    printf("You entered weight is fat.");
+    return 0;
+}
