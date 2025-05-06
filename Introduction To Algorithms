@@ -548,3 +548,17 @@ int main() {
     printf("You entered weight is fat.");
     return 0;
 }
+
+#include <stdio.h>
+#include <math.h>
+int main() {
+    //30.Write the program that finds the area and circumference of a circle.
+  int r;
+  float area,circumference,pi=3.14;
+  printf("Enter the radius of circle:");
+  scanf("%d",&r);
+  area=pi*pow(r,2);
+  circumference=2*pi*r;
+   printf("The area of circle is %f.\nThe circumference of circle is %f.",area,circumference);
+    return 0;
+}
