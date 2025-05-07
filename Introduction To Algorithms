@@ -576,3 +576,83 @@ int main() {
    printf("It is not Square.");
     return 0;
 }
+
+#include <stdio.h>
+#include <math.h>
+int main() {
+    //32.An airplane accelerates uniformly for 15 minutes, reaching a speed of 480 km/h. Then it travels at a constant speed for 20 minutes, and decelerates uniformly for 15 minutes, reaching a speed of zero. Write the program that gives the speed at any time t.
+  int time,velocity;
+  printf("Enter the time:");
+  scanf("%d",&time);
+  if(time<15)
+  {
+     velocity=32*time;
+    printf("%d",velocity);  
+  }
+   else {
+       if(time>35)
+       velocity=1600-(32-time);
+       else
+       velocity=480;
+       printf("%d",velocity);
+   } 
+    return 0;
+}
+#include <stdio.h>
+#include <math.h>
+int num;
+int sum=0;
+int temp=0;
+int x;
+int main() {
+    //33.The numbers whose sum of the first two digits and the last two digits of the entered four-digit numbers is equal to the number itself are called original numbers. Write the program that finds whether the entered number is original or not.
+  
+  printf("Enter the Number:");
+  scanf("%d",&num);
+  x=num;
+  temp=num%100;
+  sum=temp+sum;
+  num=num/100;
+  sum=num+sum;
+  sum=sum^2;
+  if(x==sum)
+  printf("The number is original.");
+  else
+  printf("The number is not original.");
+    return 0;
+}
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    //34.Write the program that finds whether the difference between the sum of the odd numbers and the sum of the even numbers among the integers between 1 and 500 is negative or positive.
+  int count,even=0,odd=0;
+  for(count=1;count<=500;count++)
+  {
+      odd=odd+count;
+      even=even+(count+1);
+  }
+  if(odd-even<0)
+  printf("The difference between even and odd is negative.");
+  else
+  printf("The difference between even and odd is positive.");
+    return 0;
+}
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    //35.Write he program that finds the ones, tens, hundreds and thousands digits of a 4-digit number.
+  int num,ones,tens,hundreds,thousands,temp;
+  printf("Enter the 4-digit number:");
+  scanf("%d",&num);
+  temp=num%1000;
+  tens=(num%100)/10;
+  hundreds=temp/100;
+  thousands=num/1000;
+  ones=num-(thousands*1000)-(hundreds*100)-(tens*10);
+  printf("ones=%d\ntens=%d\nhundreds=%d\nthousands=%d",ones,tens,hundreds,thousands);
+    return 0;
+}
