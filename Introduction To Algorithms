@@ -797,6 +797,34 @@ int main() {
     return 0;
 }
 
+#include <stdio.h>
+#include <math.h>
+int main() {
+   //42.Write the program that finds the roots of an equation of type ax2 + bx +c = 0.
+   int a,b,c,delta;
+   float x,y;
+   printf("Enter the coefficients a, b, and c: ");
+   scanf("%d %d %d", &a, &b, &c);
+   delta=(b*b)-(4*a*c);
+   if(delta==0)
+   {
+       x=(-b)/(2*a);
+       printf("There is only one root which is %f.",x);
+   }
+     else if(delta<0)
+       {
+           printf("There is no real root.");
+           
+       }
+     else
+    {   
+           x=(-b-sqrt(delta))/(2*a);
+           y=(-b+sqrt(delta))/(2*a);
+           printf("There are two roots.\nx=%f,y=%f",x,y);
+       
+   }
+    return 0;
+}
 
 
    
