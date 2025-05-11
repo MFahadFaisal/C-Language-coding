@@ -656,3 +656,73 @@ int main() {
   printf("ones=%d\ntens=%d\nhundreds=%d\nthousands=%d",ones,tens,hundreds,thousands);
     return 0;
 }
+
+#include <stdio.h>
+
+int main() {
+	//36.Write program and update your distribution of the 50 randomly entered negative and positive numbers.
+  int num,i,poz=0,neg=0;
+  printf("Enter the 50 Number:\n");
+  for(i=1;i<=50;i++)
+  {
+      scanf("%d",&num);
+      if(num<0)
+      neg=neg+1;
+ 
+  else{
+      if(num>0)
+      poz=poz+1;
+  }
+  }
+  printf("Positive numbers are :%d\nNegative numbers are:%d ",poz,neg);  
+return 0;
+}
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    //37.Write the program of  number puzzle game.
+
+    int Guess, held, count;
+
+    
+    srand(time(NULL));
+    held = (rand() % 10) + 1; 
+
+    printf("Welcome to the Number Puzzle Game!\n");
+    printf("Guess the number between 1 and 10. You have 10 tries.\n");
+
+    for (count = 1; count <= 10; count++) {
+        printf("Attempt %d: ", count);
+        scanf("%d", &Guess);
+
+        if (Guess == held) {
+            printf("Congrats!!! You found it in %d tries.\n", count);
+            break;
+        } else if (Guess < held) {
+            printf("Kindly increase your guess.\n");
+        } else {
+            printf("Kindly decrease your guess.\n");
+        }
+
+        if (count == 10) {
+            printf("We are so sad. Best of luck next time. The correct number was %d.\n", held);
+        }
+    }
+
+    return 0;
+}
+#include <stdio.h>
+
+int main() {
+    //38.Write the program that shows the numbers between 10 and 200 that are divisible by 5 when 2 more than 3 times the integers are between 10 and 200.
+    int i, k;
+    for (i = 10; i <= 200; i++) {
+        k = 3 * i + 2;
+        if (k % 5 == 0) {
+            printf("%d\n", i);
+        }
+    }
+    return 0;
+}
