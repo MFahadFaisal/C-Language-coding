@@ -682,7 +682,7 @@ return 0;
 #include <time.h>
 
 int main() {
-    //37.Write the program of  number puzzle game.
+    //37.Write the program of number puzzle game.
 
     int Guess, held, count;
 
@@ -726,3 +726,78 @@ int main() {
     }
     return 0;
 }
+
+
+
+
+
+#include <stdio.h>
+
+int main () {
+//39.Write the program that tells the type of triangle with given interior angles.
+    int a, b, c;
+
+    printf("Enter the interior angles: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+   
+    if (a + b + c != 180 || a <= 0 || b <= 0 || c <= 0) {
+        printf("The angles do not form a valid triangle.\n");
+
+	if (a == b && b == c) {
+        printf("The triangle is Equilateral.\n");
+    } else if (a == b || b == c || a == c) {
+        printf("The triangle is Isosceles.\n");
+    } else {
+        printf("The triangle is Scalene.\n");
+    }
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+   //40.Write the program that finds Obeb and Okek.
+   int S1,S2,x,y,okek;
+   printf("Enter the two numbers:");
+   scanf("%d %d",&S1,&S2);
+   x=S1;
+   y=S2;
+   while(S1!=S2)
+   {
+       if(S1>S2)
+       {
+           S1=S1-S2;
+       }
+       else if(S2>S1)
+       {
+           S2=S2-S1;
+       }
+   }
+   printf("OBEB=%d\n",S1);
+   okek=(x*y)/S1;
+   printf("OKEK=%d",okek);
+    return 0;
+}
+
+ #include <stdio.h>
+#include <math.h>
+int main() {
+   //41.Write the program that finds the product of the squares of integers between 1 and 10.
+   int i;
+   unsigned long long product=1;
+   for(i=1;i<=10;i++)
+   {
+       product=product*pow(i,2);
+   }
+   
+   printf("The product of squares of integers between 1 and 10 is %llu.",product);
+    return 0;
+}
+
+
+
+   
+    
