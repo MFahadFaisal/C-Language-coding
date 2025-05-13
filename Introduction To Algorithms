@@ -826,6 +826,101 @@ int main() {
     return 0;
 }
 
+#include <stdio.h>
+#include <math.h>
+int main() {
+   //43.Write the program that shows how many prime numbers there are between 1-100.
+   int num,term=4;
+   for(num=8;num<=100;num++)
+   {
+     if((num%2)!=0)
+     {
+         if((num%3)!=0)
+         {
+             if((num%5)!=0)
+             {
+                 if((num%7)!=0)
+                 term++;
+             }
+         }
+     }
+   }
+    printf("term=%d",term);
+    return 0;
+}
 
-   
+#include <stdio.h>
+#include <math.h>
+int main() {
+   //44.Write the program that shows prime numbers between 10-100.
+   int num;
+   printf("The list of prime numbers from 10 to 100 is as follow:\n");
+   for(num=10;num<=100;num++)
+   {
+     if((num%2)!=0)
+     {
+         if((num%3)!=0)
+         {
+             if((num%5)!=0)
+             {
+                 if((num%7)!=0)
+                 printf("%d\n",num);
+             }
+         }
+     }
+   }
+  
+    return 0;
+}
     
+#include <stdio.h>
+#include <math.h>
+int main() {
+   //45.Write the program that calculates the hypotenuse of a triangle whose two perpendicular sides are entered from the outside.
+   float a,b,c;
+   printf("Enter the first number:");
+   scanf("%f",&a);
+   printf("Enter the second number:");
+   scanf("%f",&b);
+   c=sqrt(pow(a,2)+pow(b,2));
+   printf("The hypotenuse of the triangle is %.3f.",c);
+  return 0;
+}
+
+#include <stdio.h>
+#include <math.h>
+int main() {
+   //46.Write the program that calculates the area of a triangle whose two sides and the angle between them are entered from the outside.
+   int a,b,angle;
+   float area;
+   printf("Enter the first side:");
+   scanf("%d",&a);
+   printf("Enter the second side:");
+   scanf("%d",&b);
+   printf("Enter the angle:");
+   scanf("%d",&angle);
+   
+   area=a*b*sin(angle)/2;
+   printf("The Area of triangle is %f.",area);
+  
+    return 0;
+}
+
+#include <stdio.h>
+#include <math.h>
+int main() {
+   //47.Write the program that calculates the area and volume of the sphere whose radius is entered from the outside.
+   int r;
+   float area,volume;
+   float pi=3.14;
+   printf("Enter the radius of sphere:");
+   scanf("%d",&r);
+   area=4*pi*pow(r,2);
+   volume=(4*pi*pow(r,3))/3;
+   printf("The Area of sphere is %f.\n",area);
+   printf("The Volume of sphere is %f.",volume);
+  
+    return 0;
+}
+
+ 
