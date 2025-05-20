@@ -973,3 +973,60 @@ int main() {
     return 0;
 }
 
+#include <stdio.h>
+
+int main() {
+    //51.Write a program that finds the difference between the averages of the two numbers taken from the average of the largest and smallest of these numbers.
+    int a,largest,smallest,temp,i;
+    float b,avg,diff;
+    printf("Enter a number:");
+    scanf("%d",&a);
+    largest=a;
+    smallest=a;
+    temp=a;
+    for(i=2;i<=10;i++)
+    {
+        printf("Enter the number again:");
+        scanf("%d",&a);
+        if(smallest>a)
+        smallest=a;
+        if(largest<a)
+        largest=a;
+        temp=temp+a;
+    }
+    b=(smallest+largest)/2;
+    avg=temp/10;
+    diff=avg-b;
+    printf("The difference is as follow:%d",diff);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    //52.If the number 1 k is odd, it is multiplied by 3 and 1 is added. If it is even, it is divided by 2. The process continues until the number k becomes 1. Write the program that finds how many steps this process takes, the maximum value the number k takes during the process, and after which number the number k always reaches 1 as an even number.
+    int k,count=0,max=0,divisor=0;
+    scanf("%d",&k);
+    while(k!=1)
+    {
+        count++;
+        if(k%2==1)
+        {
+            k=(k*3)+1;
+            count++;
+            divisor=0;
+        }
+        else
+        {
+            if(divisor<k)
+            divisor=k;
+            k=k/2;
+        }
+        if(max<k)
+        {
+            max=k;
+        }
+        printf("MAX=%d\nProcess=%d\nEven=%d",max,count,divisor);
+    }
+    return 0;
+}
