@@ -1030,3 +1030,43 @@ int main() {
     }
     return 0;
 }
+
+#include <stdio.h>
+#include <math.h> 
+
+int main() {
+    //53.The series expansion of the function eˣ is given below. Accordingly, write the program that calculates eˣ based on the user-input values of x and N.
+    int x, n, i;
+    double sum = 1.0; 
+    double fact = 1.0;
+
+    printf("Enter the value of x: ");
+    scanf("%d\n", &x);
+
+    printf("Enter the number of terms N: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+        fact *= i; 
+        sum += pow(x, i) / fact;
+    }
+
+    printf("e^%d ≈ %.6f\n", x, sum);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    //54.Write the program that inputs a 10-element number array.
+    int array[10],i;
+    printf("Enter the elements of an Array:");
+    for(i=0;i<10;i++)
+    {
+        printf("\n\n");
+        printf("d[%d]=",i);
+        scanf("%d",&array[i]);
+    }
+
+    return 0;
+}
