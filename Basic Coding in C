@@ -1,0 +1,381 @@
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+    printf("Hello, my name is Fahad.\n");
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+    printf("My name is Fahad.\n");
+    printf("I am 21 years old.\n");
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+    printf("Hello, I am Fahad, 21 years old, and I like programming.\n");
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+    char name[] = "Fahad";
+    int age = 21;
+
+    printf("Hello, my name is %s.\n", name);
+    printf("I am %d years old.\n", age);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+    char name[30];
+    int age;
+
+    printf("Enter your name: ");
+    scanf("%s", name);
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    printf("Hello %s! You are %d years old.\n", name, age);
+
+    return 0;
+}
+
+
+Simple Calculator in C
+
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+    char op;
+
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter an operator (+, -, *, /): ");
+    scanf(" %c", &op);   // notice the space before %c (to avoid input issues)
+
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    if (op == '+') {
+        printf("Result: %d\n", num1 + num2);
+    } 
+    else if (op == '-') {
+        printf("Result: %d\n", num1 - num2);
+    } 
+    else if (op == '*') {
+        printf("Result: %d\n", num1 * num2);
+    } 
+    else if (op == '/') {
+        if (num2 != 0) {
+            printf("Result: %d\n", num1 / num2);
+        } else {
+            printf("Error! Division by zero is not allowed.\n");
+        }
+    } 
+    else {
+        printf("Invalid operator!\n");
+    }
+
+    return 0;
+}
+
+
+Number Guessing Game in C
+
+#include <stdio.h>
+#include <stdlib.h>  // for rand() and srand()
+#include <time.h>    // for time()
+
+int main() {
+    int secret, guess, tries = 0;
+
+    // seed random number generator
+    srand(time(0));  
+
+    // random number between 1 and 100
+    secret = rand() % 100 + 1;  
+
+    printf("🎮 Welcome to the Number Guessing Game!\n");
+    printf("I have picked a number between 1 and 100.\n");
+    printf("Can you guess it?\n");
+
+    // loop until correct guess
+    do {
+        printf("Enter your guess: ");
+        scanf("%d", &guess);
+        tries++;
+
+        if (guess > secret) {
+            printf("Too high! Try again.\n");
+        } else if (guess < secret) {
+            printf("Too low! Try again.\n");
+        } else {
+            printf("🎉 Congratulations! You guessed it in %d tries.\n", tries);
+        }
+
+    } while (guess != secret);
+
+    return 0;
+}
+
+
+🌡️ Temperature Converter in C
+
+#include <stdio.h>
+
+int main() {
+    float temp, converted;
+    char choice;
+
+    printf("🌡️ Temperature Converter\n");
+    printf("Choose conversion:\n");
+    printf("1. Celsius to Fahrenheit (C → F)\n");
+    printf("2. Fahrenheit to Celsius (F → C)\n");
+    printf("Enter your choice (1 or 2): ");
+    scanf(" %c", &choice);
+
+    if (choice == '1') {
+        printf("Enter temperature in Celsius: ");
+        scanf("%f", &temp);
+        converted = (temp * 9 / 5) + 32;
+        printf("Result: %.2f °C = %.2f °F\n", temp, converted);
+    } 
+    else if (choice == '2') {
+        printf("Enter temperature in Fahrenheit: ");
+        scanf("%f", &temp);
+        converted = (temp - 32) * 5 / 9;
+        printf("Result: %.2f °F = %.2f °C\n", temp, converted);
+    } 
+    else {
+        printf("Invalid choice!\n");
+    }
+
+    return 0;
+}
+
+
+Factorial Calculator (loop + recursion versions)
+
+
+#include <stdio.h>
+
+// Iterative factorial function
+unsigned long long factorialLoop(int n) {
+    unsigned long long fact = 1;
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    return fact;
+}
+
+// Recursive factorial function
+unsigned long long factorialRecursion(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+        return n * factorialRecursion(n - 1);
+    }
+}
+
+int main() {
+    int num, choice;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+        return 0;
+    }
+
+    printf("Choose method to calculate factorial:\n");
+    printf("1. Loop (Iterative)\n");
+    printf("2. Recursion\n");
+    printf("Enter your choice (1 or 2): ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("Factorial of %d (using loop) = %llu\n", num, factorialLoop(num));
+            break;
+        case 2:
+            printf("Factorial of %d (using recursion) = %llu\n", num, factorialRecursion(num));
+            break;
+        default:
+            printf("Invalid choice! Please enter 1 or 2.\n");
+    }
+
+    return 0;
+}
+
+
+Tic Tac Toe Game
+
+#include <stdio.h>
+
+char board[3][3]; // 3x3 Tic-Tac-Toe board
+
+// Initialize the board with spaces
+void initBoard() {
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            board[i][j] = ' ';
+}
+
+// Print the board
+void printBoard() {
+    printf("\n");
+    printf(" %c | %c | %c \n", board[0][0], board[0][1], board[0][2]);
+    printf("---|---|---\n");
+    printf(" %c | %c | %c \n", board[1][0], board[1][1], board[1][2]);
+    printf("---|---|---\n");
+    printf(" %c | %c | %c \n\n", board[2][0], board[2][1], board[2][2]);
+}
+
+// Check if a player has won
+int checkWin(char player) {
+    // Check rows and columns
+    for (int i = 0; i < 3; i++) {
+        if ((board[i][0] == player && board[i][1] == player && board[i][2] == player) || 
+            (board[0][i] == player && board[1][i] == player && board[2][i] == player))
+            return 1;
+    }
+    // Check diagonals
+    if ((board[0][0] == player && board[1][1] == player && board[2][2] == player) ||
+        (board[0][2] == player && board[1][1] == player && board[2][0] == player))
+        return 1;
+
+    return 0;
+}
+
+// Check if the board is full (draw)
+int isDraw() {
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            if (board[i][j] == ' ')
+                return 0;
+    return 1;
+}
+
+int main() {
+    int row, col;
+    char player = 'X';
+    initBoard();
+
+    printf("Welcome to Tic-Tac-Toe!\n");
+    printBoard();
+
+    while (1) {
+        printf("Player %c, enter your move (row and column: 0-2 0-2): ", player);
+        scanf("%d %d", &row, &col);
+
+        // Check for valid move
+        if (row < 0 || row > 2 || col < 0 || col > 2 || board[row][col] != ' ') {
+            printf("Invalid move! Try again.\n");
+            continue;
+        }
+
+        board[row][col] = player;
+        printBoard();
+
+        if (checkWin(player)) {
+            printf("Player %c wins!\n", player);
+            break;
+        }
+
+        if (isDraw()) {
+            printf("It's a draw!\n");
+            break;
+        }
+
+        // Switch player
+        player = (player == 'X') ? 'O' : 'X';
+    }
+
+    return 0;
+}
+
+
+ATM Simulator
+
+#include <stdio.h>
+
+int main() {
+    int choice;
+    double balance = 0.0;
+    double amount;
+
+    printf("Welcome to Simple ATM Simulator!\n");
+
+    while (1) {
+        // Display menu
+        printf("\nATM Menu:\n");
+        printf("1. Check Balance\n");
+        printf("2. Deposit\n");
+        printf("3. Withdraw\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1: // Check balance
+                printf("Your current balance is: $%.2lf\n", balance);
+                break;
+
+            case 2: // Deposit
+                printf("Enter amount to deposit: $");
+                scanf("%lf", &amount);
+                if (amount <= 0) {
+                    printf("Invalid amount! Try again.\n");
+                } else {
+                    balance += amount;
+                    printf("$%.2lf deposited successfully.\n", amount);
+                }
+                break;
+
+            case 3: // Withdraw
+                printf("Enter amount to withdraw: $");
+                scanf("%lf", &amount);
+                if (amount <= 0) {
+                    printf("Invalid amount! Try again.\n");
+                } else if (amount > balance) {
+                    printf("Insufficient balance!\n");
+                } else {
+                    balance -= amount;
+                    printf("$%.2lf withdrawn successfully.\n", amount);
+                }
+                break;
+
+            case 4: // Exit
+                printf("Thank you for using the ATM simulator. Goodbye!\n");
+                return 0;
+
+            default:
+                printf("Invalid choice! Please enter 1-4.\n");
+        }
+    }
+
+    return 0;
+}
